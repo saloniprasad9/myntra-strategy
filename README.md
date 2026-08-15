@@ -24,4 +24,3 @@ https://github.com/saloniprasad9/myntra-strategy.git
 
 - This is a static frontend project.
 - No backend or database is required to run it.
-- You can easily extend it with additional sections, charts, or styling.
