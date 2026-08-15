@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myntra Post-Purchase Trust Initiative — PM Portfolio | Saloni Prasad</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#F7F6F3;--surface:#FFFFFF;--text:#1C1C1E;--muted:#6E6E73;
+  --accent:#FF3F6C;--accent-bg:#FFF0F3;--border:#E5E5EA;
+  --code-bg:#F2F2F7;--blue:#1C4E80;--purple:#7B2D8B;--green:#0B6E4F;
+  --blue-bg:#EBF4FF;
+}
+body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);font-size:15px;line-height:1.75}
+
+/* COVER */
+.cover{background:var(--text);padding:72px 60px 64px;position:relative;overflow:hidden}
+.cover::after{content:'';position:absolute;right:-40px;top:0;width:220px;height:100%;background:var(--accent);opacity:.06;transform:skewX(-12deg)}
+.cover-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
+.cover-title{font-family:'Lora',serif;font-size:40px;font-weight:600;color:#fff;line-height:1.2;max-width:580px;margin-bottom:12px}
+.cover-sub{font-size:16px;color:rgba(255,255,255,.5);margin-bottom:52px;max-width:520px;line-height:1.6}
+.cover-bar{width:60px;height:3px;background:var(--accent);margin-bottom:52px}
+.meta{display:flex;gap:44px;flex-wrap:wrap}
+.meta-item{display:flex;flex-direction:column;gap:5px}
+.meta-label{font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:rgba(255,255,255,.3)}
+.meta-value{font-size:13px;color:rgba(255,255,255,.8);font-weight:500}
+
+/* NAV */
+.toc{background:var(--surface);border-bottom:1px solid var(--border);padding:18px 60px}
+.toc-inner{max-width:860px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.toc-lbl{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-right:4px;white-space:nowrap}
+.toc a{font-size:12px;color:var(--muted);text-decoration:none;padding:4px 12px;border:1px solid var(--border);border-radius:20px;transition:.15s all;white-space:nowrap}
+.toc a:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-bg)}
+
+/* LAYOUT */
+.wrap{max-width:860px;margin:0 auto;padding:0 40px}
+
+/* SECTIONS */
+.section{padding:56px 0;border-bottom:1px solid var(--border)}
+.section:last-child{border-bottom:none}
+.sec-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:6px;display:flex;align-items:center;gap:10px}
+.sec-label::after{content:'';height:1px;width:32px;background:var(--accent);opacity:.35}
+.sec-title{font-family:'Lora',serif;font-size:26px;font-weight:600;margin-bottom:20px;line-height:1.3}
+.prose p{margin-bottom:16px;color:var(--text);line-height:1.8}
+.prose strong{font-weight:600}
+
+/* CALLOUTS */
+.story{background:var(--accent-bg);border-left:3px solid var(--accent);padding:22px 26px;border-radius:0 8px 8px 0;margin:28px 0;font-style:italic;color:#3D1222;line-height:1.8}
+.story-lbl{font-style:normal;font-size:9px;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.insight{background:var(--blue-bg);border-left:3px solid var(--blue);padding:18px 22px;border-radius:0 8px 8px 0;margin:22px 0}
+.insight-lbl{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--blue);margin-bottom:8px}
+.insight p{font-size:14px;line-height:1.7;color:#1C3A5E;margin:0}
+.hmw{background:var(--text);padding:30px 34px;border-radius:10px;margin:28px 0}
+.hmw-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.hmw-text{font-family:'Lora',serif;font-size:17px;font-style:italic;line-height:1.65;color:#fff}
+.market-note{background:#FFFBEB;border:1px solid #FCD34D;border-radius:8px;padding:14px 18px;margin:20px 0;font-size:13.5px;line-height:1.6}
+.market-note strong{color:#92400E}
+.whitespace{background:var(--accent);padding:22px 26px;border-radius:10px;margin:24px 0}
+.whitespace-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.65);margin-bottom:10px}
+.whitespace-text{font-family:'Lora',serif;font-size:16px;font-style:italic;line-height:1.65;color:#fff}
+
+/* TABLES */
+.tbl-wrap{overflow-x:auto;margin:22px 0;border-radius:8px;border:1px solid var(--border)}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead{background:var(--text);color:#fff}
+thead th{padding:11px 14px;text-align:left;font-weight:600;font-size:11px;letter-spacing:.4px}
+tbody tr{border-bottom:1px solid var(--border)}
+tbody tr:last-child{border-bottom:none}
+tbody tr:nth-child(even){background:#F9F9F7}
+tbody td{padding:11px 14px;vertical-align:top;line-height:1.5}
+.rice-winner{background:#FFF0F3!important;border-left:3px solid var(--accent)}
+
+/* BADGES */
+.badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600}
+.b-strong{background:#D1FAE5;color:#065F46}
+.b-partial{background:#FEF3C7;color:#92400E}
+.b-weak{background:#FEE2E2;color:#991B1B}
+.b-high{background:#FEE2E2;color:#991B1B}
+.b-medium{background:#FEF3C7;color:#92400E}
+.b-low{background:#D1FAE5;color:#065F46}
+.b-recommended{background:var(--accent);color:#fff}
+
+/* METRICS */
+.metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+.metric-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px}
+.metric-val{font-size:28px;font-weight:700;color:var(--accent);font-family:'Lora',serif;margin-bottom:4px}
+.metric-lbl{font-size:12px;color:var(--muted);line-height:1.4}
+
+/* TOGGLE (Functional Requirements) */
+.toggle{border:1px solid var(--border);border-radius:8px;margin:22px 0;overflow:hidden}
+.toggle summary{padding:14px 18px;cursor:pointer;font-weight:600;font-size:14px;list-style:none;display:flex;align-items:center;justify-content:space-between;background:var(--surface);color:var(--text);user-select:none}
+.toggle summary::-webkit-details-marker{display:none}
+.toggle summary::after{content:'▸';color:var(--muted);font-size:12px;transition:.2s}
+.toggle[open] summary::after{content:'▾'}
+.toggle-body{padding:22px 24px;border-top:1px solid var(--border);background:var(--bg)}
+.fr-item{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid var(--border)}
+.fr-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.fr-tag{font-size:9px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:6px}
+.fr-title{font-size:14px;font-weight:600;color:var(--text);margin-bottom:6px}
+.fr-body{font-size:13.5px;line-height:1.7;color:var(--text);margin-bottom:8px}
+.fr-ac{font-size:12.5px;line-height:1.6;color:var(--muted);font-style:italic;padding:10px 14px;background:var(--surface);border-radius:6px;border-left:2px solid var(--border)}
+
+/* ROADMAP */
+.dep-chain{display:flex;align-items:center;gap:8px;flex-wrap:wrap;background:var(--code-bg);padding:18px 22px;border-radius:8px;margin:22px 0}
+.dep-pill{padding:6px 14px;border-radius:6px;font-size:12px;font-weight:600;color:#fff;white-space:nowrap}
+.dep-arrow{color:var(--muted);font-size:16px;font-weight:600}
+.roadmap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+.rq{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.rq-head{padding:13px 18px;font-size:12px;font-weight:700;color:#fff;letter-spacing:.4px}
+.rq-body{padding:18px}
+.rq-tag{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;margin-top:14px}
+.rq-tag:first-child{margin-top:0}
+.rq-content{font-size:12.5px;line-height:1.55;color:var(--text)}
+
+/* OKRs */
+.okr-obj{background:var(--text);padding:26px 30px;border-radius:10px;margin:24px 0}
+.okr-lbl{font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px}
+.okr-text{font-family:'Lora',serif;font-size:16px;font-style:italic;line-height:1.65;color:#fff}
+.krs{list-style:none;display:flex;flex-direction:column;gap:12px;margin:22px 0}
+.kr{display:flex;gap:14px;align-items:flex-start;padding:16px 18px;background:var(--surface);border:1px solid var(--border);border-radius:8px}
+.kr-num{background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.kr-text{font-size:13.5px;line-height:1.55}
+.kr-text small{color:var(--muted);font-size:12px}
+
+/* RISKS */
+.risk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0}
+.risk-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.risk-head{padding:11px 16px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#fff}
+.risk-body{padding:16px}
+.risk-tag{font-size:9px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-top:12px;margin-bottom:5px}
+.risk-tag:first-child{margin-top:0}
+.risk-content{font-size:12.5px;line-height:1.55;color:var(--text)}
+
+/* ONE-PAGER */
+.memo{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:26px 0}
+.memo-head{background:var(--text);padding:24px 30px}
+.memo-tag{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:6px}
+.memo-title{font-family:'Lora',serif;font-size:18px;color:#fff;margin-bottom:16px}
+.memo-meta{display:flex;gap:24px;flex-wrap:wrap}
+.memo-meta span{font-size:11px;color:rgba(255,255,255,.4)}
+.memo-meta span b{color:rgba(255,255,255,.8)}
+.memo-body{padding:30px}
+.memo-sec{margin-bottom:26px}
+.memo-sec:last-child{margin-bottom:0}
+.memo-sec-title{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;padding-bottom:8px;border-bottom:1px solid var(--border)}
+.memo-sec-body{font-size:14px;line-height:1.75;color:var(--text)}
+
+/* FOOTER */
+.footer{background:var(--text);color:rgba(255,255,255,.35);text-align:center;padding:30px;font-size:12px;line-height:1.8}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .cover{padding:48px 24px}
+  .cover-title{font-size:28px}
+  .toc{padding:14px 20px}
+  .wrap{padding:0 20px}
+  .metrics,.roadmap-grid,.risk-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-label">PM Portfolio &nbsp;·&nbsp; End-to-End Product Strategy</div>
+  <div class="cover-title">Myntra Post-Purchase Trust Initiative</div>
+  <div class="cover-sub">A product strategy for the delayed-order support experience — from problem framing to executive communication</div>
+  <div class="cover-bar"></div>
+  <div class="meta">
+    <div class="meta-item"><div class="meta-label">Author</div><div class="meta-value">Saloni Prasad</div></div>
+    <div class="meta-item"><div class="meta-label">Background</div><div class="meta-value">Product professional with 3 years of experience in business analysis, product ownership, and enterprise software delivery</div></div>
+    <div class="meta-item"><div class="meta-label">Domain</div><div class="meta-value">E-commerce / Consumer</div></div>
+    <div class="meta-item"><div class="meta-label">Date</div><div class="meta-value">Q3 2026</div></div>
+  </div>
+</div>
+
+<!-- TOC -->
+<div class="toc">
+  <div class="toc-inner">
+    <span class="toc-lbl">Contents</span>
+    <a href="#problem">Problem Framing</a>
+    <a href="#market">Market Sizing</a>
+    <a href="#competitive">Competitive Analysis</a>
+    <a href="#rice">Prioritization</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#okrs">OKRs &amp; Metrics</a>
+    <a href="#risks">Risk Analysis</a>
+    <a href="#exec">Executive Summary</a>
+  </div>
+</div>
+
+<div style="background:var(--bg)">
+<div class="wrap">
+
+<!-- SECTION 00: PROBLEM -->
+<div class="section" id="problem">
+  <div class="sec-label">Section 00</div>
+  <div class="sec-title">Problem Framing</div>
+  <div class="prose">
+
+    <div class="story">
+      <div class="story-lbl">The Experience That Prompted This Strategy</div>
+      I ordered a pair of shoes on Myntra. The estimated delivery date came and went. The tracking page showed "reached nearest hub" for four days with no further update. The order was eventually marked undeliverable and a refund was initiated — without any proactive communication from the platform. When I tried to reach customer support, I was redirected to an AI chatbot that could only answer pre-defined questions — none of which addressed my specific situation. I searched for a contact number, found one, and called it. It was an IVR that cycled through menus without routing me to a human agent. The experience eroded my trust in the platform and made me reconsider future purchases.
+    </div>
+
+    <p>The problem is not that the delay happened — delays are an operational reality. The problem is the <strong>complete absence of direction</strong> when a delay occurs. Myntra has automated its entire post-purchase support experience through a chatbot, FAQs, and an IVR system. None of those tools are equipped to handle situations that fall outside their scripted paths — and a delayed, stuck, or undeliverable order almost always does.</p>
+
+    <p>Diagnosing this as one blob of "bad customer support" would produce a strategy with no prioritisation logic. The right starting point is identifying the distinct failure modes — because each has a different root cause, a different owning team, and a different fix.</p>
+
+    <div class="insight">
+      <div class="insight-lbl">Three Distinct Failure Modes</div>
+      <p>
+        <strong>1 — Tracking opacity:</strong> Status updates are vague and non-specific ("reached nearest hub") with no timestamp, no granularity, and no reason for the delay.<br><br>
+        <strong>2 — Chatbot limitation:</strong> The support chatbot provides repetitive, scripted responses with no escalation path — users cannot exit the loop regardless of how many times they attempt to resolve their issue.<br><br>
+        <strong>3 — No accessible human agent:</strong> There is no visible point of contact within the app. Reaching a human requires a Google search, an external phone call, and navigating an IVR — which still does not reliably connect to an agent.
+      </p>
+    </div>
+
+    <div class="hmw">
+      <div class="hmw-lbl">North Star — Problem Statement</div>
+      <div class="hmw-text">"How might we give users with a delayed or stuck order clear, real-time clarity on what is happening and what to do next — so that their trust in Myntra does not erode and they continue purchasing on the platform instead of churning to a competitor?"</div>
+    </div>
+
+    <p style="font-size:13px;color:var(--muted)"><strong>Secondary segment earmarked for Q1 2027:</strong> Users waiting for a refund after a return or cancellation. A related but distinct journey, driven by financial anxiety rather than logistical uncertainty, and involving different internal teams. Deliberately excluded from Q3 2026 and Q4 2026 to maintain focus and executability.</p>
+
+  </div>
+</div>
+
+<!-- SECTION 01: MARKET SIZING -->
+<div class="section" id="market">
+  <div class="sec-label">Section 01</div>
+  <div class="sec-title">Market Sizing — TAM / SAM / SOM</div>
+  <div class="prose">
+
+    <p>This is not a sizing of "Indian e-commerce." That figure would tell a product leader nothing actionable. This is a sizing of the specific sub-problem: the population of Myntra users affected by delayed orders and the revenue at risk when their trust erodes and they churn. Every input is either sourced from public data or explicitly labeled as a stated assumption — because stated assumptions can be challenged and updated, while unstated ones cannot.</p>
+
+    <div class="insight">
+      <div class="insight-lbl">Key Segmentation Insight</div>
+      <p>First-time buyers churn at approximately 5x the rate of repeat customers when an order is delayed. They carry no accumulated goodwill from previous positive experiences — a single bad episode constitutes 100% of their data about the platform. This segment distinction is what makes the SOM credible and targeted. The strategy does not claim to recover all 20M affected users; it prioritises the cohort where intervention has the highest retention ROI.</p>
+    </div>
+
+    <p><strong>Stated Assumptions</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Assumption</th><th>Value</th><th>Source / Rationale</th></tr></thead>
+        <tbody>
+          <tr><td>A1</td><td>India online shoppers (2025)</td><td>~350M</td><td>IAMAI / Redseer industry estimates</td></tr>
+          <tr><td>A2</td><td>Myntra Annual Active Users</td><td>~200M</td><td>Public data, December 2025</td></tr>
+          <tr><td>A3</td><td>Typical non-festive MAU</td><td>~35M</td><td>Stated assumption: ~45% of 80M festive peak, adjusted for seasonality</td></tr>
+          <tr><td>A4</td><td>% of orders delayed or stuck in transit</td><td>~10%</td><td>Stated assumption: last-mile variability, tier-2/3 city reach, logistics partner inconsistency</td></tr>
+          <tr><td>A5</td><td>First-time buyer churn rate on delay</td><td>~15%</td><td>Stated assumption: no trust buffer; one negative experience is 100% of their platform data</td></tr>
+          <tr><td>A6</td><td>Repeat buyer churn rate on delay</td><td>~3%</td><td>Stated assumption: accumulated positive experience absorbs one adverse episode</td></tr>
+          <tr><td>A7</td><td>Blended churn rate (weighted average)</td><td>~6%</td><td>Derived from A5 and A6, weighted by segment mix</td></tr>
+          <tr><td>A8</td><td>Average annual spend per Myntra user</td><td>~₹5,000</td><td>Stated assumption: ₹1,400 AOV × ~3.5 orders per year</td></tr>
+          <tr><td>A9</td><td>First-time buyers as % of Annual Active Users</td><td>~30%</td><td>Consistent with Myntra's reported 70% new customer acquisition from non-metros (2025)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="metrics">
+      <div class="metric-card">
+        <div class="metric-val">35M</div>
+        <div class="metric-lbl"><strong>TAM</strong> — All Indian e-commerce users affected by meaningful order delays annually</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">20M</div>
+        <div class="metric-lbl"><strong>SAM</strong> — Myntra users experiencing delayed orders; ₹600 Cr in annual revenue at risk</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-val">5M</div>
+        <div class="metric-lbl"><strong>SOM</strong> — First-time buyers reached in Year 1; ~₹200 Cr in protected annual revenue</div>
+      </div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Level</th><th>Users Affected</th><th>Revenue at Risk / Protected</th><th>Scope</th></tr></thead>
+        <tbody>
+          <tr><td><strong>TAM</strong></td><td>35M (all Indian e-commerce)</td><td>~₹1,050 Cr at risk annually</td><td>All delayed-order users across all platforms</td></tr>
+          <tr><td><strong>SAM</strong></td><td>20M (Myntra platform)</td><td>~₹600 Cr at risk annually</td><td>Myntra's own delayed-order user base</td></tr>
+          <tr><td><strong>SOM</strong></td><td>5M first-time buyers (Y1, phased rollout)</td><td>~₹200 Cr in protected revenue</td><td>Highest-churn-risk segment; 40% platform coverage in Year 1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECTION 02: COMPETITIVE -->
+<div class="section" id="competitive">
+  <div class="sec-label">Section 02</div>
+  <div class="sec-title">Competitive Analysis &amp; White Space</div>
+  <div class="prose">
+
+    <p>Competitive analysis here serves one purpose: identifying where no player is performing well yet, so the strategy knows what to build toward. Three dimensions were selected because they map directly to the three failure modes identified in the problem statement — not because they are generic dimensions that appear in every matrix. Evaluating competitors on dimensions that do not connect to the user problem produces observations, not strategy.</p>
+
+    <div class="market-note">
+      <strong>Market Update — Q3 2026:</strong> During strategy development, it was confirmed that both Myntra and Amazon India have begun sending proactive delay notifications via WhatsApp and email. The competitive matrix was updated accordingly. Proactive notification has shifted from an unoccupied white space to a table-stakes expectation. The updated white space and its strategic implications are captured below.
+    </div>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Platform</th>
+            <th>Real-time Tracking Granularity</th>
+            <th>Proactive Delay Communication</th>
+            <th>Escalation Path to Human Agent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Myntra</strong></td>
+            <td><span class="badge b-strong">Strong</span></td>
+            <td><span class="badge b-partial">Partial</span> <small style="color:var(--muted)">Now sending alerts; quality and specificity inconsistent</small></td>
+            <td><span class="badge b-weak">Weak</span> <small style="color:var(--muted)">Chatbot loops, no clear in-app human path</small></td>
+          </tr>
+          <tr>
+            <td><strong>Amazon India</strong></td>
+            <td><span class="badge b-strong">Strong</span></td>
+            <td><span class="badge b-partial">Partial</span> <small style="color:var(--muted)">Sending alerts; escalation path remains broken</small></td>
+            <td><span class="badge b-weak">Weak</span> <small style="color:var(--muted)">IVR loops; no clear in-app route to a human agent</small></td>
+          </tr>
+          <tr>
+            <td><strong>Flipkart</strong></td>
+            <td><span class="badge b-strong">Strong</span></td>
+            <td><span class="badge b-partial">Partial</span></td>
+            <td><span class="badge b-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td><strong>Ajio</strong></td>
+            <td><span class="badge b-partial">Partial</span></td>
+            <td><span class="badge b-partial">Partial</span></td>
+            <td><span class="badge b-partial">Partial</span></td>
+          </tr>
+          <tr>
+            <td><strong>Nykaa Fashion</strong></td>
+            <td><span class="badge b-strong">Strong</span></td>
+            <td><span class="badge b-strong">Strong</span></td>
+            <td><span class="badge b-partial">Partial</span> <small style="color:var(--muted)">Lower order volume limits infrastructure maturity</small></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="whitespace">
+      <div class="whitespace-lbl">The White Space</div>
+      <div class="whitespace-text">Every platform now notifies. No platform resolves. A delay notification that leads to a chatbot loop is worse than no notification — it raises expectations and then fails to meet them. The white space is not proactive communication. It is the seamless bridge from notification to guaranteed human resolution: a complete post-delay journey, end to end, that no Indian fashion platform currently offers.</div>
+    </div>
+
+    <p>This updated framing is strategically more defensible than the original. Myntra is not competing on whether to send a notification — every major platform does. The differentiation is what happens after the notification when the user still needs resolution. That is a harder capability to build, and a harder gap for competitors to close quickly.</p>
+
+  </div>
+</div>
+
+<!-- SECTION 03: RICE -->
+<div class="section" id="rice">
+  <div class="sec-label">Section 03</div>
+  <div class="sec-title">Solution Prioritization — RICE Framework</div>
+  <div class="prose">
+
+    <p>Five solutions were developed to address the white space. One initially proposed solution — an in-app self-serve resolution tool — was rejected after analysis. It would replicate the same failure point as the existing chatbot: functional for simple, pre-defined cases and a dead end for complex ones. A tool that leads to the same broken experience adds a step before the wall, not a way over it.</p>
+
+    <p><strong>RICE formula:</strong> (Reach × Impact × Confidence) ÷ Effort</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Solution</th>
+            <th>Failure Mode Addressed</th>
+            <th>Reach / mo</th>
+            <th>Impact</th>
+            <th>Confidence</th>
+            <th>Effort (person-months)</th>
+            <th>RICE Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="rice-winner">
+            <td><strong>S2 — Proactive Delay Notification</strong><br><small style="color:var(--muted)">WhatsApp and email alert with specific EDD and honest delay reason, sent before the user has to ask</small></td>
+            <td>Tracking opacity</td>
+            <td>3.5M</td><td>2</td><td>75%</td><td>1</td>
+            <td><strong style="color:var(--accent)">5,250,000</strong> <span class="badge b-recommended">Recommended</span></td>
+          </tr>
+          <tr>
+            <td><strong>S4 — Smart Push Alert on Anomaly Detection</strong><br><small style="color:var(--muted)">Auto-triggered push notification when a shipment is flagged as stuck — the detection layer that powers S2</small></td>
+            <td>Tracking opacity (detection)</td>
+            <td>3.5M</td><td>2</td><td>80%</td><td>2</td>
+            <td><strong>2,800,000</strong></td>
+          </tr>
+          <tr>
+            <td><strong>S1 — Escalation-First UI with Guaranteed Human Fallback</strong><br><small style="color:var(--muted)">Rebuild orders → status → delay reason → live human agent in two taps, with response time confirmed upfront</small></td>
+            <td>No accessible escalation path</td>
+            <td>3.5M</td><td>2</td><td>50%</td><td>4</td>
+            <td><strong>875,000</strong></td>
+          </tr>
+          <tr>
+            <td><strong>S5 — Post-Resolution Trust Reward</strong><br><small style="color:var(--muted)">Follow-up communication with wallet credit or coupon for users whose orders were delayed, after resolution</small></td>
+            <td>Trust repair (post-resolution)</td>
+            <td>3M</td><td>2</td><td>80%</td><td>10</td>
+            <td><strong>480,000</strong></td>
+          </tr>
+          <tr>
+            <td><strong>S3 — Logistics API Live Status Feed</strong><br><small style="color:var(--muted)">Real-time, timestamped status updates from logistics partners surfaced directly into the tracking screen</small></td>
+            <td>Tracking opacity (data layer)</td>
+            <td>3.5M</td><td>1.5</td><td>70%</td><td>13</td>
+            <td><strong>282,692</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight">
+      <div class="insight-lbl">Strategic Overlay — RICE Efficiency vs. Strategic Role</div>
+      <p>S2 wins RICE on efficiency — it is the lowest-effort, highest-reach solution in the set. But S2 is a communication solution, not a resolution solution. Informing a user that their order is delayed without giving them a clear path to act on that information is an incomplete response. The strategic centerpiece of this initiative is <strong>S1</strong> — the escalation-first UI with guaranteed human fallback — which converts a notification into a complete resolution journey. S2 and S4 ship first to reduce support volume and set user expectations. S1 delivers on those expectations. The two are complementary and sequential, not competing.</p>
+    </div>
+
+    <details class="toggle">
+      <summary>S1 — Functional Requirements: What the UI Must Achieve</summary>
+      <div class="toggle-body">
+        <p style="font-size:13.5px;color:var(--muted);margin-bottom:20px">These requirements define what must be true for the user — not how the interface is designed. Design decisions belong to the product designer working from this brief. These are the criteria against which engineering and QA would validate the build.</p>
+
+        <div class="fr-item">
+          <div class="fr-tag">FR-01</div>
+          <div class="fr-title">Delay Reason Visibility</div>
+          <div class="fr-body">When a user opens the status screen of a delayed or stuck order, the screen must display a specific, plain-language explanation of why the order is delayed — sourced from S4's anomaly detection layer and S3's logistics data feed. Generic placeholders such as "unforeseen circumstances" are not acceptable after logistics API data is available.</div>
+          <div class="fr-ac">Acceptance criterion: 0% of delay status screens display non-specific placeholder text once S3 data is integrated. Verified in QA before Q2 launch.</div>
+        </div>
+
+        <div class="fr-item">
+          <div class="fr-tag">FR-02</div>
+          <div class="fr-title">Escalation Option Visibility</div>
+          <div class="fr-body">A human escalation option — labelled clearly as contact with a human agent, not a chatbot — must be visible on the delay status screen itself. It must not require the user to enter the chatbot flow or navigate to a separate support section to access it.</div>
+          <div class="fr-ac">Acceptance criterion: The escalation option is reachable in one tap or fewer from the delayed order status screen. Verified on both Android and iOS.</div>
+        </div>
+
+        <div class="fr-item">
+          <div class="fr-tag">FR-03</div>
+          <div class="fr-title">Response Time Transparency</div>
+          <div class="fr-body">When a user initiates human escalation, they must see an estimated agent response time before entering the support queue. This removes the uncertainty of entering a system with no feedback on wait time — which is itself a source of anxiety and abandonment.</div>
+          <div class="fr-ac">Acceptance criterion: Estimated response time is displayed on the escalation confirmation screen before the user confirms. The displayed time must update dynamically based on live agent queue load, not a static estimate.</div>
+        </div>
+
+        <div class="fr-item">
+          <div class="fr-tag">FR-04</div>
+          <div class="fr-title">Mandatory Chatbot Exit</div>
+          <div class="fr-body">The existing chatbot must surface a human escalation option automatically after two consecutive failed resolution attempts — defined as the chatbot responding with any variant of inability to help or a request to rephrase. Users must not be able to reach a dead end within the chatbot flow.</div>
+          <div class="fr-ac">Acceptance criterion: In usability testing, zero users experience more than two consecutive unresolved chatbot responses without being offered a human escalation option. Verified across five user scenarios covering delayed, stuck, and undeliverable order states.</div>
+        </div>
+
+        <div class="fr-item">
+          <div class="fr-tag">FR-05</div>
+          <div class="fr-title">End-to-End Tap Count</div>
+          <div class="fr-body">The complete journey from opening the app to reaching a live human agent must be completable in four taps or fewer under standard conditions. This constraint ensures the redesign produces a genuinely faster path, not a reorganised version of the same friction.</div>
+          <div class="fr-ac">Acceptance criterion: QA-verified tap count for the path [App open → Orders → Delayed order status → Escalation confirmation → Human chat] is four or fewer on both Android and iOS before Q2 launch.</div>
+        </div>
+
+        <div class="fr-item">
+          <div class="fr-tag">FR-06</div>
+          <div class="fr-title">Cross-Platform Consistency</div>
+          <div class="fr-body">The escalation path must be functionally identical on Android and iOS. No platform should have a degraded or absent escalation option due to platform-specific implementation differences or delayed rollout sequencing.</div>
+          <div class="fr-ac">Acceptance criterion: Tap count, escalation availability, and response time display verified on the two most recent OS versions of both Android and iOS before Q2 launch date.</div>
+        </div>
+
+      </div>
+    </details>
+
+  </div>
+</div>
+
+<!-- SECTION 04: ROADMAP -->
+<div class="section" id="roadmap">
+  <div class="sec-label">Section 04</div>
+  <div class="sec-title">3-Quarter Roadmap — Now / Next / Later</div>
+  <div class="prose">
+
+    <p>The value of a roadmap is not in the features it lists — it is in the sequencing logic that justifies their order. Every solution below has a stated dependency that explains why it occupies its quarter, not an adjacent one. A roadmap without a dependency chain is a calendar, not a strategy.</p>
+
+    <div class="dep-chain">
+      <div class="dep-pill" style="background:var(--blue)">S4 — Detect</div>
+      <span class="dep-arrow">→</span>
+      <div class="dep-pill" style="background:var(--blue)">S2 — Notify</div>
+      <span class="dep-arrow">→</span>
+      <div class="dep-pill" style="background:var(--purple)">S1 — Resolve</div>
+      <span class="dep-arrow">+</span>
+      <div class="dep-pill" style="background:var(--purple)">S3 — Data Layer</div>
+      <span class="dep-arrow">→</span>
+      <div class="dep-pill" style="background:var(--green)">S5 — Repair</div>
+    </div>
+
+    <div class="roadmap-grid">
+      <div class="rq">
+        <div class="rq-head" style="background:var(--blue)">NOW — Q3 2026 &nbsp;·&nbsp; Foundation</div>
+        <div class="rq-body">
+          <div class="rq-tag">Solutions</div>
+          <div class="rq-content">S4 Anomaly Detection + S2 Proactive Delay Notification</div>
+          <div class="rq-tag">Why Now</div>
+          <div class="rq-content">Lowest effort, highest reach. S4 and S2 function as one system — detection without communication is silent; communication without detection is impossible. Together they reduce user anxiety and inbound support volume immediately, creating better conditions for Q2's deeper build.</div>
+          <div class="rq-tag">Milestones</div>
+          <div class="rq-content">20% reduction in inbound support contacts for delayed orders within 6 weeks of launch · WhatsApp notification open rate ≥ 60%</div>
+          <div class="rq-tag">Dependency Created</div>
+          <div class="rq-content">S4's detection layer powers S1's delay-reason display in Q4 2026. Reduced support volume operationally prepares the human agent team for Q2's guaranteed fallback launch.</div>
+        </div>
+      </div>
+      <div class="rq">
+        <div class="rq-head" style="background:var(--purple)">NEXT — Q4 2026 &nbsp;·&nbsp; Resolution</div>
+        <div class="rq-body">
+          <div class="rq-tag">Solutions</div>
+          <div class="rq-content">S1 Escalation-First Design + Guaranteed Human Fallback + S3 Logistics API Live Status Feed</div>
+          <div class="rq-tag">Why Next</div>
+          <div class="rq-content">S4's detection data now powers S1's honest delay-reason display. Reduced Q3 2026 inbound volume means the human agent team can absorb Q4 2026's guaranteed fallback launch without being overwhelmed. S3 ships alongside S1 because S1's delay reason display requires accurate logistics data to be meaningful.</div>
+          <div class="rq-tag">Milestones</div>
+          <div class="rq-content">80% of delayed-order users reach a human agent within 2 taps from the status screen · Post-interaction CSAT for delayed-order support ≥ 4.2/5.0</div>
+          <div class="rq-tag">Dependency Created</div>
+          <div class="rq-content">Resolution tracking data — which users were delayed, contacted support, and were resolved — creates the targeting layer S5 requires in Q1 2027 to send personalised trust rewards rather than blanket communications.</div>
+        </div>
+      </div>
+      <div class="rq">
+        <div class="rq-head" style="background:var(--green)">LATER — Q1 2027 &amp; Expand</div>
+        <div class="rq-body">
+          <div class="rq-tag">Solutions</div>
+          <div class="rq-content">S5 Post-Resolution Trust Reward + Refund-Waiting User Expansion</div>
+          <div class="rq-tag">Why Later</div>
+          <div class="rq-content">S5 requires Q4 2026's resolution tracking to identify which users to reward and with what — without that data, S5 is an untargeted coupon campaign. The refund-waiting segment expansion reuses Q3 2026 and Q4 2026 infrastructure (anomaly detection, proactive notifications, escalation UI) without rebuilding from scratch, significantly reducing the effort required.</div>
+          <div class="rq-tag">Milestones</div>
+          <div class="rq-content">Repeat purchase rate among delayed-order users +15% vs. pre-intervention baseline · Trust Reward redemption rate ≥ 50% · Post-resolution CSAT for refund-waiting users ≥ 4.0/5.0</div>
+          <div class="rq-tag">Dependency Satisfied</div>
+          <div class="rq-content">Full dependency chain S4 → S2 → S1 + S3 → S5 complete. Refund-waiting secondary segment integrated into existing infrastructure.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECTION 05: OKRs -->
+<div class="section" id="okrs">
+  <div class="sec-label">Section 05</div>
+  <div class="sec-title">Success Metrics &amp; OKRs</div>
+  <div class="prose">
+
+    <p>OKRs are defined before building, not after. They are the pre-committed answer to the question: how will we know if this worked? Key Results must measure outcomes — what changes in the world as a result of the work — not outputs such as features shipped. Outputs belong in the roadmap. OKRs measure whether those outputs produced the intended effect.</p>
+
+    <div class="okr-obj">
+      <div class="okr-lbl">Objective</div>
+      <div class="okr-text">Restore trust for every Myntra user whose order does not arrive as promised — so that a delayed delivery becomes a moment of confidence in the platform rather than a reason to leave it.</div>
+    </div>
+
+    <ul class="krs">
+      <li class="kr">
+        <div class="kr-num">1</div>
+        <div class="kr-text">
+          <strong>Post-interaction CSAT for delayed-order support interactions reaches ≥ 4.2/5.0 by end of Q4 2026.</strong><br>
+          <small>Measures whether S1's escalation-first UI and guaranteed human fallback are producing satisfactory resolutions — not merely that users can reach a human agent, but that the interaction resolves their issue.</small>
+        </div>
+      </li>
+      <li class="kr">
+        <div class="kr-num">2</div>
+        <div class="kr-text">
+          <strong>Repeat purchase rate among users who experienced a delayed order increases by 15% versus the pre-intervention baseline by end of Q1 2027.</strong><br>
+          <small>The north star metric for this initiative. The segment filter is essential — this measures only the cohort the intervention directly touched, not the platform's overall repeat purchase rate. A 15% improvement in this cohort demonstrates that the trust infrastructure is working.</small>
+        </div>
+      </li>
+      <li class="kr">
+        <div class="kr-num">3</div>
+        <div class="kr-text">
+          <strong>Post-resolution CSAT for refund-waiting users reaches ≥ 4.0/5.0 by end of Q1 2027.</strong><br>
+          <small>A slightly lower target than KR1 — financial anxiety is harder to resolve than logistical uncertainty, and the refund journey involves more stakeholders and a longer resolution timeline. Setting a differentiated, realistic bar is more credible than applying identical targets across distinct user journeys.</small>
+        </div>
+      </li>
+    </ul>
+
+    <p><strong>Leading Indicators — Tracked Week over Week</strong></p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Indicator</th><th>What It Measures</th><th>Why It Is Leading</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>Delay notification open rate</strong></td>
+            <td>Percentage of users opening the WhatsApp or email delay alert</td>
+            <td>If open rate is below target in Week 1, KR1 and KR2 will not move — the message content, sender ID, or timing requires adjustment before Week 4, not after the quarter ends</td>
+          </tr>
+          <tr>
+            <td><strong>Chatbot-to-human escalation success rate</strong></td>
+            <td>Percentage of users who successfully reach a human agent from the delayed-order support flow</td>
+            <td>If low after S1 launches, the UI redesign is not producing the intended navigation clarity — identifies flow failures before sufficient CSAT data has accumulated to surface them</td>
+          </tr>
+          <tr>
+            <td><strong>Time-to-first-human-response</strong></td>
+            <td>Average minutes between a user's escalation request and the first agent message</td>
+            <td>If response time rises, CSAT will follow — signals whether human agent capacity requires urgent scaling before the quarterly KR measurement point</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECTION 06: RISKS -->
+<div class="section" id="risks">
+  <div class="sec-label">Section 06</div>
+  <div class="sec-title">Risk Analysis</div>
+  <div class="prose">
+
+    <p>Three risks selected — one per category — for specificity and relevance to this strategy. Each risk names the precise mechanism of failure, not a generic category. Each carries a mitigation (proactive action taken before the risk materialises) and a contingency (pre-planned response if it materialises despite mitigation). A strategy without pre-planned contingencies is optimistic planning, not risk management.</p>
+
+    <div class="risk-grid">
+      <div class="risk-card">
+        <div class="risk-head" style="background:var(--blue)">Technical Risk</div>
+        <div class="risk-body">
+          <div class="risk-tag">Risk</div>
+          <div class="risk-content">Logistics partner APIs (Delhivery, Ecom Express, Shadowfax, Ekart) are unreliable, inconsistently documented, or unavailable — blocking S3's real-time status feed and degrading S4's anomaly detection accuracy ahead of Q2 launch.</div>
+          <div class="risk-tag">Likelihood / Impact</div>
+          <div class="risk-content"><span class="badge b-medium">Likelihood: Medium</span>&nbsp;<span class="badge b-high">Impact: High</span></div>
+          <div class="risk-tag">Mitigation</div>
+          <div class="risk-content">Conduct a logistics partner API audit in Week 1 of Q3 2026 — before any S3 engineering begins. Prioritise integration with the top three partners covering approximately 80% of Myntra's order volume. Negotiate API access agreements in parallel with engineering discovery, not after it.</div>
+          <div class="risk-tag">Contingency</div>
+          <div class="risk-content">Launch S3 in degraded mode: display last confirmed status with a timestamp ("Last confirmed at Bengaluru hub, 4 hours ago"). This is specific, honest, and significantly better than "reached nearest hub." Full real-time integration completes in Q1 2027 as partner API stability improves.</div>
+        </div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-head" style="background:#D97706">Market Risk</div>
+        <div class="risk-body">
+          <div class="risk-tag">Risk</div>
+          <div class="risk-content">Notification fatigue — users have archived Myntra's WhatsApp sender, disabled push notifications, or developed habitual dismissal behaviour toward e-commerce communications, causing open rates to fall below the 60% Q1 milestone.</div>
+          <div class="risk-tag">Likelihood / Impact</div>
+          <div class="risk-content"><span class="badge b-high">Likelihood: High</span>&nbsp;<span class="badge b-medium">Impact: Medium</span></div>
+          <div class="risk-tag">Mitigation</div>
+          <div class="risk-content">Send from a dedicated logistics sender ID, separate from Myntra's promotional WhatsApp number. Personalise each message with the user's name, specific order reference, and a concrete revised EDD. Send within 30 minutes of anomaly detection — relevance and timing are the two strongest predictors of open rate in transactional communications.</div>
+          <div class="risk-tag">Contingency</div>
+          <div class="risk-content">If WhatsApp open rate falls below 40% by the end of Week 2, activate a parallel SMS channel — SMS achieves significantly higher open rates than WhatsApp in non-opted-in contexts. Run A/B tests on message copy and sender identity simultaneously, with a decision point before Week 4.</div>
+        </div>
+      </div>
+      <div class="risk-card">
+        <div class="risk-head" style="background:var(--accent)">Regulatory Risk</div>
+        <div class="risk-body">
+          <div class="risk-tag">Risk</div>
+          <div class="risk-content">India's Digital Personal Data Protection Act (DPDP Act, 2023) requires explicit and documented user consent before Myntra can send logistics updates via WhatsApp. Existing consent records may not satisfy the stricter DPDP standard, blocking S2's legal launch before Q1 ends.</div>
+          <div class="risk-tag">Likelihood / Impact</div>
+          <div class="risk-content"><span class="badge b-medium">Likelihood: Medium</span>&nbsp;<span class="badge b-high">Impact: High</span></div>
+          <div class="risk-tag">Mitigation</div>
+          <div class="risk-content">Engage legal and compliance in Week 1 of Q3 2026 — in parallel with engineering work, not sequentially. Audit existing WhatsApp consent records against DPDP Act requirements. Implement a compliant consent re-capture flow at the order confirmation screen — a low-effort UI addition with significant legal protection.</div>
+          <div class="risk-tag">Contingency</div>
+          <div class="risk-content">If DPDP-compliant WhatsApp consent cannot be established before Q1 launch, pivot S2 to in-app push notifications exclusively. These operate under the app permission consent already granted at install and can launch without additional legal review. The WhatsApp channel re-launches in Q4 2026 once compliant consent infrastructure is in place.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- SECTION 07: EXEC SUMMARY -->
+<div class="section" id="exec">
+  <div class="sec-label">Section 07</div>
+  <div class="sec-title">Executive One-Pager</div>
+  <div class="prose">
+
+    <p>Written for a VP of Product at Myntra with four minutes to read. No framework terminology. No process descriptions. Every number traces directly to an earlier section of this document. One recommendation, stated clearly, with a specific resource request and pre-committed proof criteria.</p>
+
+    <div class="memo">
+      <div class="memo-head">
+        <div class="memo-tag">Internal Memorandum</div>
+        <div class="memo-title">Post-Purchase Trust Initiative — Q1–Q3 2026 Strategy Proposal</div>
+        <div class="memo-meta">
+          <span>To: <b>VP of Product, Myntra</b></span>
+          <span>From: <b>Saloni Prasad, Product Strategy</b></span>
+          <span>Date: <b>August 2026</b></span>
+        </div>
+      </div>
+      <div class="memo-body">
+        <div class="memo-sec">
+          <div class="memo-sec-title">The Situation</div>
+          <div class="memo-sec-body">Myntra loses approximately 1.2 million users annually to delay-driven churn — customers whose orders arrive late or get stuck in transit, who receive vague status updates, encounter dead ends in the support flow, and stop purchasing rather than escalate. At an average annual spend of ₹5,000 per user, this represents ₹600 crore in annual revenue at risk. First-time buyers are disproportionately exposed: with no prior positive experiences to offset a single adverse one, their churn rate on a delayed order is five times that of a repeat customer. With 50% of our active user base now Gen Z — the demographic with the highest expectations and lowest patience for unresolved issues — the cost of inaction compounds each quarter.</div>
+        </div>
+        <div class="memo-sec">
+          <div class="memo-sec-title">The Opportunity</div>
+          <div class="memo-sec-body">Proactive delay notification has become table stakes — Myntra and Amazon India both now send alerts via WhatsApp and email. But a notification that leads to a chatbot loop is an incomplete commitment: it raises user expectations and then fails to meet them. Every major Indian fashion platform notifies. None resolves. Myntra has a first-mover opportunity to be the only Indian fashion platform where a delay notification is the entry point to a guaranteed resolution journey — not the end of the platform's responsibility. This positions our post-purchase experience as a structural competitive advantage, protecting an estimated ₹200 crore in first-time buyer revenue in Year 1, compounding as the expectation gap between Myntra and competitors widens.</div>
+        </div>
+        <div class="memo-sec">
+          <div class="memo-sec-title">The Proposal</div>
+          <div class="memo-sec-body">We recommend a three-quarter trust infrastructure initiative, sequenced to deliver immediate user value while building toward deep resolution capability. In Q3 2026, we deploy anomaly detection and proactive delay notifications — alerting users before they need to ask, with specific ETAs and honest delay reasons. Estimated at 4 person-months, this immediately reduces inbound support volume while Q4 2026's deeper build proceeds. In Q4 2026, we rebuild the delayed-order support journey end-to-end: an escalation-first interface that guarantees users a path to a live human agent within two taps, with a confirmed response time displayed upfront, powered by real-time logistics partner data. Estimated at 19 person-months. In Q1 2027, we extend the infrastructure to refund-waiting users and launch personalised post-resolution trust rewards — wallet credit and targeted recovery offers for users who experienced a delay, funded by the retention value of bringing them back to purchase.</div>
+        </div>
+        <div class="memo-sec">
+          <div class="memo-sec-title">The Ask and the Proof</div>
+          <div class="memo-sec-body">We are requesting approval for a cross-functional squad of two backend engineers, one frontend engineer, one designer, and one data analyst for Q1, scaling to a full squad of six to seven in Q2. We will report against three pre-defined Key Results: post-interaction CSAT for delayed-order support reaching 4.2 out of 5.0 by end of Q4 2026; repeat purchase rate among delayed-order users increasing 15% versus the pre-intervention baseline by end of Q1 2027; and post-resolution CSAT for refund-waiting users reaching 4.0 out of 5.0 by end of Q1 2027. Three leading indicators — notification open rate, escalation success rate, and time-to-first-human-response — will be reported every Monday to surface course corrections before they become quarterly misses.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+</div>
+
+<div class="footer">
+  <div>Saloni Prasad &nbsp;·&nbsp; PM Portfolio &nbsp;·&nbsp; Myntra Post-Purchase Trust Initiative &nbsp;·&nbsp; 2026</div>
+  <div style="margin-top:6px;font-size:11px">Problem Framing &nbsp;·&nbsp; Market Sizing &nbsp;·&nbsp; Competitive Analysis &nbsp;·&nbsp; RICE Prioritization &nbsp;·&nbsp; 3-Quarter Roadmap &nbsp;·&nbsp; OKRs &nbsp;·&nbsp; Risk Analysis &nbsp;·&nbsp; Executive Communication</div>
+</div>
+
+</body>
+</html>
