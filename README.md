@@ -12,7 +12,7 @@ This project is a presentation-style webpage built using HTML and CSS that showc
 
 ## How to View
 
-Open `index.html` in a browser to view the project locally.
+https://saloniprasad9.github.io/myntra-strategy/ - Click on this link to view the page . 
 
 ## GitHub
 
